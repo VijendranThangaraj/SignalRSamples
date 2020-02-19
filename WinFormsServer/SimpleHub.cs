@@ -19,9 +19,6 @@ namespace WinFormsServer
         public static event ClientConnectionEventHandler ClientDisconnected;
         public static event ClientNameChangedEventHandler ClientNameChanged;
 
-        public static event ClientGroupEventHandler ClientJoinedToGroup;
-        public static event ClientGroupEventHandler ClientLeftGroup;
-
         public static event MessageReceivedEventHandler MessageReceived;
 
         public static void ClearState()
@@ -57,21 +54,7 @@ namespace WinFormsServer
             _users[Context.ConnectionId] = userName;
 
             ClientNameChanged?.Invoke(Context.ConnectionId, userName);
-        }
-
-        public async Task JoinGroup(string groupName)
-        {
-            await Groups.Add(Context.ConnectionId, groupName);
-
-            ClientJoinedToGroup?.Invoke(Context.ConnectionId, groupName);
-        }
-
-        public async Task LeaveGroup(string groupName)
-        {
-            await Groups.Remove(Context.ConnectionId, groupName);
-
-            ClientLeftGroup?.Invoke(Context.ConnectionId, groupName);
-        }        
+        }      
 
         public void Send(string msg)
         {

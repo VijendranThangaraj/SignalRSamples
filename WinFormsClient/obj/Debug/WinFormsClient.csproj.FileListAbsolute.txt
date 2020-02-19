@@ -1,0 +1,15 @@
+F:\Samples\SignalR\WinFormsClient\bin\Debug\SgClient1.exe.config
+F:\Samples\SignalR\WinFormsClient\bin\Debug\SgClient1.exe
+F:\Samples\SignalR\WinFormsClient\bin\Debug\SgClient1.pdb
+F:\Samples\SignalR\WinFormsClient\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+F:\Samples\SignalR\WinFormsClient\bin\Debug\Newtonsoft.Json.dll
+F:\Samples\SignalR\WinFormsClient\bin\Debug\Microsoft.AspNet.SignalR.Client.pdb
+F:\Samples\SignalR\WinFormsClient\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+F:\Samples\SignalR\WinFormsClient\bin\Debug\Newtonsoft.Json.xml
+F:\Samples\SignalR\WinFormsClient\obj\Debug\WinFormsClient.csprojAssemblyReference.cache
+F:\Samples\SignalR\WinFormsClient\obj\Debug\WinFormsClient.FrmClient.resources
+F:\Samples\SignalR\WinFormsClient\obj\Debug\SgClient1.Properties.Resources.resources
+F:\Samples\SignalR\WinFormsClient\obj\Debug\WinFormsClient.csproj.GenerateResource.cache
+F:\Samples\SignalR\WinFormsClient\obj\Debug\WinFormsClient.csproj.CopyComplete
+F:\Samples\SignalR\WinFormsClient\obj\Debug\SgClient1.exe
+F:\Samples\SignalR\WinFormsClient\obj\Debug\SgClient1.pdb

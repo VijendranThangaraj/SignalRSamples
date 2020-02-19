@@ -36,14 +36,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.grpBroadcast = new System.Windows.Forms.GroupBox();
-            this.rdToAll = new System.Windows.Forms.RadioButton();
-            this.rdToGroup = new System.Windows.Forms.RadioButton();
-            this.rdToClient = new System.Windows.Forms.RadioButton();
-            this.cmbGroups = new System.Windows.Forms.ComboBox();
-            this.cmbClients = new System.Windows.Forms.ComboBox();
+            this.btnSend = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMessage = new System.Windows.Forms.TextBox();
-            this.btnSend = new System.Windows.Forms.Button();
+            this.cmbClients = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.grpBroadcast.SuspendLayout();
@@ -129,10 +125,6 @@
             this.grpBroadcast.Controls.Add(this.label2);
             this.grpBroadcast.Controls.Add(this.txtMessage);
             this.grpBroadcast.Controls.Add(this.cmbClients);
-            this.grpBroadcast.Controls.Add(this.cmbGroups);
-            this.grpBroadcast.Controls.Add(this.rdToClient);
-            this.grpBroadcast.Controls.Add(this.rdToGroup);
-            this.grpBroadcast.Controls.Add(this.rdToAll);
             this.grpBroadcast.Enabled = false;
             this.grpBroadcast.Location = new System.Drawing.Point(10, 100);
             this.grpBroadcast.Name = "grpBroadcast";
@@ -141,60 +133,20 @@
             this.grpBroadcast.TabStop = false;
             this.grpBroadcast.Text = "Broadcast Message";
             // 
-            // rdToAll
+            // btnSend
             // 
-            this.rdToAll.AutoSize = true;
-            this.rdToAll.Checked = true;
-            this.rdToAll.Location = new System.Drawing.Point(12, 22);
-            this.rdToAll.Name = "rdToAll";
-            this.rdToAll.Size = new System.Drawing.Size(52, 17);
-            this.rdToAll.TabIndex = 0;
-            this.rdToAll.TabStop = true;
-            this.rdToAll.Text = "To All";
-            this.rdToAll.UseVisualStyleBackColor = true;
-            // 
-            // rdToGroup
-            // 
-            this.rdToGroup.AutoSize = true;
-            this.rdToGroup.Location = new System.Drawing.Point(12, 50);
-            this.rdToGroup.Name = "rdToGroup";
-            this.rdToGroup.Size = new System.Drawing.Size(70, 17);
-            this.rdToGroup.TabIndex = 1;
-            this.rdToGroup.Text = "To Group";
-            this.rdToGroup.UseVisualStyleBackColor = true;
-            // 
-            // rdToClient
-            // 
-            this.rdToClient.AutoSize = true;
-            this.rdToClient.Location = new System.Drawing.Point(12, 76);
-            this.rdToClient.Name = "rdToClient";
-            this.rdToClient.Size = new System.Drawing.Size(67, 17);
-            this.rdToClient.TabIndex = 2;
-            this.rdToClient.Text = "To Client";
-            this.rdToClient.UseVisualStyleBackColor = true;
-            // 
-            // cmbGroups
-            // 
-            this.cmbGroups.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbGroups.FormattingEnabled = true;
-            this.cmbGroups.Location = new System.Drawing.Point(98, 44);
-            this.cmbGroups.Name = "cmbGroups";
-            this.cmbGroups.Size = new System.Drawing.Size(188, 21);
-            this.cmbGroups.TabIndex = 3;
-            // 
-            // cmbClients
-            // 
-            this.cmbClients.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbClients.FormattingEnabled = true;
-            this.cmbClients.Location = new System.Drawing.Point(98, 71);
-            this.cmbClients.Name = "cmbClients";
-            this.cmbClients.Size = new System.Drawing.Size(188, 21);
-            this.cmbClients.TabIndex = 4;
+            this.btnSend.Location = new System.Drawing.Point(253, 42);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(131, 76);
+            this.btnSend.TabIndex = 9;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 103);
+            this.label2.Location = new System.Drawing.Point(2, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 8;
@@ -202,20 +154,19 @@
             // 
             // txtMessage
             // 
-            this.txtMessage.Location = new System.Drawing.Point(98, 98);
+            this.txtMessage.Location = new System.Drawing.Point(58, 75);
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(188, 20);
             this.txtMessage.TabIndex = 7;
             // 
-            // btnSend
+            // cmbClients
             // 
-            this.btnSend.Location = new System.Drawing.Point(301, 42);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(131, 76);
-            this.btnSend.TabIndex = 9;
-            this.btnSend.Text = "Send";
-            this.btnSend.UseVisualStyleBackColor = true;
-            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            this.cmbClients.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbClients.FormattingEnabled = true;
+            this.cmbClients.Location = new System.Drawing.Point(59, 42);
+            this.cmbClients.Name = "cmbClients";
+            this.cmbClients.Size = new System.Drawing.Size(188, 21);
+            this.cmbClients.TabIndex = 4;
             // 
             // FrmServer
             // 
@@ -251,10 +202,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.ComboBox cmbClients;
-        private System.Windows.Forms.ComboBox cmbGroups;
-        private System.Windows.Forms.RadioButton rdToClient;
-        private System.Windows.Forms.RadioButton rdToGroup;
-        private System.Windows.Forms.RadioButton rdToAll;
     }
 }
 

@@ -49,22 +49,7 @@
             </table>
         </fieldset>
     </div>
-    <div id="grpMembership">
-        <fieldset>
-            <legend>Group Membership</legend>
-            <table>
-                <tr>
-                    <td style="width: 100px">Group name</td>
-                    <td style="width: 400px"><input type="text" id="txtGroupName" value=""/></td>
-                </tr>                
-                <tr>
-                    <td>&nbsp;</td>
-                    <td><button id="btnJoinGroup" onclick="joinToGroup(); return false;">Join</button>&nbsp;&nbsp;
-                        <button id="btnLeaveGroup" onclick="leaveGroup(); return false;">Leave</button></td>
-                </tr>
-            </table>
-        </fieldset>
-    </div>
+    ss
     <div>
         <fieldset>
             <legend>Log</legend>
@@ -100,6 +85,8 @@
                     writeToLog(name + ":" + message);
                 };
 
+
+
                 //Connect to hub
                 $.connection.hub.start().done( function () {
                     writeToLog("Connected.");
@@ -123,20 +110,6 @@
         function sendMessage() {
             if(simpleHubProxy != null) {
                 simpleHubProxy.server.send($('#txtMessage').val());
-            }
-        }
-
-        //Join to a group on the hub
-        function joinToGroup() {
-            if(simpleHubProxy != null) {
-                simpleHubProxy.server.joinGroup($('#txtGroupName').val());
-            }
-        }
-
-        //Leave the group
-        function leaveGroup() {
-            if(simpleHubProxy != null) {
-                simpleHubProxy.server.leaveGroup($('#txtGroupName').val());
             }
         }
 

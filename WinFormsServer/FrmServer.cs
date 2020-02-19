@@ -27,8 +27,8 @@ namespace WinFormsServer
             SimpleHub.ClientConnected += SimpleHub_ClientConnected;
             SimpleHub.ClientDisconnected += SimpleHub_ClientDisconnected;
             SimpleHub.ClientNameChanged += SimpleHub_ClientNameChanged;
-            SimpleHub.ClientJoinedToGroup += SimpleHub_ClientJoinedToGroup;
-            SimpleHub.ClientLeftGroup += SimpleHub_ClientLeftGroup;
+            //SimpleHub.ClientJoinedToGroup += SimpleHub_ClientJoinedToGroup;
+            //SimpleHub.ClientLeftGroup += SimpleHub_ClientLeftGroup;
             SimpleHub.MessageReceived += SimpleHub_MessageReceived;
         }
 
@@ -40,7 +40,7 @@ namespace WinFormsServer
             cmbClients.DataSource = _clients;
 
             //Groups list
-            cmbGroups.DataSource = _groups;
+            //cmbGroups.DataSource = _groups;
         }
 
         private void SimpleHub_ClientConnected(string clientId)
@@ -154,19 +154,10 @@ namespace WinFormsServer
         private void btnSend_Click(object sender, EventArgs e)
         {
             var hubContext = GlobalHost.ConnectionManager.GetHubContext<SimpleHub>();
+            hubContext.Clients.Client((string)cmbClients.SelectedValue).addMessage("SERVER", txtMessage.Text);
 
-            if (rdToAll.Checked)
-            {
-                hubContext.Clients.All.addMessage("SERVER", txtMessage.Text);
-            }
-            else if (rdToGroup.Checked)
-            {
-                hubContext.Clients.Group(cmbGroups.Text).addMessage("SERVER", txtMessage.Text);
-            }
-            else if (rdToClient.Checked)
-            {
-                hubContext.Clients.Client((string)cmbClients.SelectedValue).addMessage("SERVER", txtMessage.Text);
-            }
+            //hubContext.Clients.All.addMessage("SERVER", txtMessage.Text);
+       
         }
 
         private void writeToLog(string log)

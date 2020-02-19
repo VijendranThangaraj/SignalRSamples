@@ -43,7 +43,7 @@ namespace WinFormsClient
                 txtUserName.Enabled = true;
                 btnDisconnect.Enabled = false;                
                 grpMessaging.Enabled = false;
-                grpMembership.Enabled = false;
+                //grpMembership.Enabled = false;
             }
         }
 
@@ -51,18 +51,6 @@ namespace WinFormsClient
         {
             //Call the "Send" method on the hub (on the server) with the given parameters
             _hubProxy.Invoke("Send", txtMessage.Text);
-        }
-
-        private void btnJoinGroup_Click(object sender, EventArgs e)
-        {
-            //Call the "JoinGroup" method on the hub (on the server)
-            _hubProxy.Invoke("JoinGroup", txtGroupName.Text);
-        }
-
-        private void btnLeaveGroup_Click(object sender, EventArgs e)
-        {
-            //Call the "LeaveGroup" method on the hub (on the server)
-            _hubProxy.Invoke("LeaveGroup", txtGroupName.Text);
         }
 
         private async Task connectAsync()
@@ -93,7 +81,6 @@ namespace WinFormsClient
                 txtUserName.Enabled = false;
                 btnDisconnect.Enabled = true;
                 grpMessaging.Enabled = true;
-                grpMembership.Enabled = true;
             }
             catch (Exception ex)
             {
